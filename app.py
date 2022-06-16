@@ -203,7 +203,7 @@ def mask_detection():
         # initialize the video stream and allow the camera sensor to warm up
         print("[INFO] starting video stream...")
         FRAME_WINDOW = st.image([])
-        cam = cv2.VideoCapture(0)
+        cam = cv2.VideoCapture(-1)
 
         while run:
             ret, frame = cam.read()
