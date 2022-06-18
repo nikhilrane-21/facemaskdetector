@@ -16,7 +16,19 @@ def local_css(file_name):
     """ Method for reading styles.css and applying necessary changes to HTML"""
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
+def return_camera_indices():
+    index = -2
+    arr =[]
+    i = 10
+    while i> 0:
+        cap = cv.VideoCapture(index)
+        if cap.read()[0]:
+            arr.append(index)
+            cap.release()
+        index+=1
+        i-=1
+    return arr
+print (return_camera_indices (0)
 
 def mask_image():
     global RGB_img
