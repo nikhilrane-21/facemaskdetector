@@ -16,19 +16,7 @@ def local_css(file_name):
     """ Method for reading styles.css and applying necessary changes to HTML"""
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-def return_camera_indices():
-    index = -2
-    arr =[]
-    i = 10
-    while i> 0:
-        cap = cv.VideoCapture(index)
-        if cap.read()[0]:
-            arr.append(index)
-            cap.release()
-        index+=1
-        i-=1
-    return arr
-print (return_camera_indices (0)
+
 def mask_image():
     global RGB_img
     # load our serialized face detector model from disk
@@ -172,10 +160,23 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 # detect_and_predict_mask(frame, faceNet, maskNet)
 
 
+def return_camera_indices():
+    index = -2
+    arr =[]
+    i = 10
+    while i> 0:
+        cap = cv.VideoCapture(index)
+        if cap.read()[0]:
+            arr.append(index)
+            cap.release()
+        index+=1
+        i-=1
+    return arr
 
 
 
 def mask_detection():
+    print (return_camera_indices (0)
     local_css("css/styles.css")
     st.markdown('<h1 align="center">😷 Face Mask Detection</h1>', unsafe_allow_html=True)
     activities = ["Image", "Webcam"]
