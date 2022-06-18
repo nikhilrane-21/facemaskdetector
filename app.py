@@ -29,7 +29,6 @@ def return_camera_indices():
         i-=1
     return arr
 print (return_camera_indices (0)
-
 def mask_image():
     global RGB_img
     # load our serialized face detector model from disk
